@@ -1,16 +1,16 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#131016",
-    padding: 24,
+    paddingHorizontal: 24,
+    paddingTop: Platform.OS === "ios" ? 70 : 40,
   },
   eventName: {
     fontWeight: "bold",
     color: "#FDFCFE",
     fontSize: 24,
-    marginTop: 48,
   },
   eventDate: {
     color: "#6B6B6B",
@@ -40,12 +40,17 @@ export const styles = StyleSheet.create({
   },
   form: {
     marginTop: 36,
-    marginBottom: 42,
+    marginBottom: 30,
     alignItems: "center",
     paddingRight: 8,
     borderRadius: 5,
     backgroundColor: "#1F1E25",
     width: "100%",
     flexDirection: "row",
+  },
+  listEmptyText: {
+    color: "#FFF",
+    fontSize: 14,
+    textAlign: "center",
   },
 });
